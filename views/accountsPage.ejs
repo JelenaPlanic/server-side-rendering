@@ -1,0 +1,33 @@
+<%- include('partials/top.ejs') %>
+
+
+<!-- ACCOUNTS VIEW -->
+<div id="accountsView" class="accountView view">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center py-5">Accounts</h1>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Full name</th>
+                    <th>Deposit</th>
+                    <th>Card</th>
+                </tr>
+                </thead>
+                <tbody>
+                   <% accounts.forEach(acc => { %>
+                    <tr>
+                        <td><%= acc.id  %></td>
+                        <td><%= acc.fullName  %></td>
+                        <td><%= acc.deposit  %></td>
+                        <td><%= acc.card  %></td>
+                    </tr>
+                 <%  }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/bottom.ejs') %>

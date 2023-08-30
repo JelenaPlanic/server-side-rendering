@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "fullName": "Dejan",
+    "deposit": 12000,
+    "card": "Visa"
+  },
+  {
+    "id": "2",
+    "fullName": "Ivana",
+    "deposit": 20000,
+    "card": "Dina"
+  }
+]

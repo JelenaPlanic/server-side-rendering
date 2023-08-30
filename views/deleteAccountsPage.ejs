@@ -1,0 +1,38 @@
+<%- include('partials/top.ejs') %>
+
+<!-- EDIT-DELETE VIEW -->
+<div class="editDeleteView view">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center py-5">Accounts</h1>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Full name</th>
+                    <th>Deposit</th>
+                    <th>Card</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <% accounts.forEach(acc => { %>
+                        <tr>
+                            <td><%= acc.id  %></td>
+                            <td><%= acc.fullName  %></td>
+                            <td><%= acc.deposit  %></td>
+                            <td><%= acc.card  %></td>
+                            <td>
+                                <a class="btn btn-danger" href="/accounts/delete/<%= acc.id %>">Delete</a>
+                            </td>
+
+
+                        </tr>
+                     <%  }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/bottom.ejs') %>

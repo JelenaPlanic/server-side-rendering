@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="http://localhost:3000/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Bank-App</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="/accounts" id="accounts" class="btn btn-primary me-2">Accounts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/accounts/add" id="addAccount" class="btn btn-warning me-2">Add Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a  href="/accounts/edit" id="editDeleteAccount" class="btn btn-info me-2">Edit Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/accounts/delete" id="editDeleteAccount" class="btn btn-danger me-2">Delete Account</a>
+                    </li>
+               
+                </ul>
+            </div>
+            <div>
+                <input class="form-control" type="text" placeholder="Search" name="searchTerm">
+            </div>
+        </div>
+    </nav>
+    <section class="container">

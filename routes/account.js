@@ -1,17 +1,16 @@
 const {Router} = require("express");
+const getAllAcconts = require("../middlewares/getAllAccounts");
 const router = Router();
 
 //GET
-router.get("/", require("../controllers/renderAccountsPage"));
+router.get("/", getAllAcconts, require("../controllers/renderAccountsPage")); // dodat middleware
 router.get("/add", require("../controllers/renderAccountsAddPage"));
-router.get("/edit", require("../controllers/renderAccountEditPage"));
-router.get("/delete", require("../controllers/renderAccountDeletePage"));
+router.get("/edit", getAllAcconts, require("../controllers/renderAccountEditPage"));
+router.get("/delete", getAllAcconts,  require("../controllers/renderAccountDeletePage"));
 router.get("/edit/:id", require("../controllers/renderEditFormPage"));
 router.get("/delete/:id", require("../controllers/deleteAccount"));
 
-
-
-
+router.get("/search", require("../controllers/renderSearchResult"));
 
 
 //POST

@@ -1,34 +1,34 @@
-const accounts = require("../data.json");
+const AccountModel = require("../models/accountModel");
+
 const updateAccount = (req, res)=>{
+
     console.log(req.body); // sve sto se nalazi u name atributu, postaje key objecta body, a value inputa, vrednost tog kljuca!
 
     let {id, ...account} = req.body;
     console.log(id);
     console.log(account);
 
-    // accounts = accounts.map((acc)=>{
-    
-    //     if(acc.id === id)
-    //     {
-    //         return req.body
-    //     }
-    //     else 
-    //     {
-    //         return acc;
-    //     }
+    // AccountModel.updateOne({_id : id}, {$set: account}) // 2 objecta
+    // .then((result)=>{
+    //     console.log(result);
+    //     res.redirect("/accounts/edit");
     // })
+    // .catch((error)=>{
+    //     console.log(error);
+    //     res.redirect("/error");
+    // });
 
-    let foundedAccount = null;
-
-    accounts.find((acc, index)=>{
-        foundedAccount = index;
-        return acc.id === id;
+    AccountModel.findOneAndUpdate({_id : id}, {$set: account}, {new : true}) // vraca update Obj
+    .then((result)=>{
+        console.log(result);
+        res.redirect("/accounts/edit");
     })
+    .catch((error)=>{
+        console.log(error);
+        res.redirect("/error");
+    });
 
-    accounts[foundedAccount] = req.body;
-
-    res.redirect("/accounts/edit");
-
-}
+ 
+};
 
 module.exports = updateAccount;

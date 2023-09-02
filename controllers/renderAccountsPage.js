@@ -1,7 +1,9 @@
-const accounts = require("../data.json");
+const AccountModel = require("../models/accountModel");
 
-const renderAccountsPage = (req, res)=>{  // odgovorni za requeste, response 
-    res.render("accountsPage", {accounts}); // po difoltu odlazi u views folder
+const renderAccountsPage = (req, res)=>{  
+   
+        res.render("accountsPage", {accounts : req.locals}) ; // acc ima vrednost obj locals
+   
 }
 
 module.exports = renderAccountsPage; 

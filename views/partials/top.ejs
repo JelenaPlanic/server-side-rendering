@@ -30,8 +30,17 @@
                 </ul>
             </div>
             <div>
-                <input class="form-control" type="text" placeholder="Search" name="searchTerm">
+                <% let term="" %>
+                <form action="/accounts/search?term=<%= term %>">
+                    <input class="form-control" type="text"  name="term" value="<%= term %>">
+                    <br>
+                    <button type="submit" class=" btn btn-info me-2">Search</button>
+                </form>
+                
             </div>
+
+           
         </div>
+
     </nav>
     <section class="container">

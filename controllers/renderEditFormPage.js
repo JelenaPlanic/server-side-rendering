@@ -4,7 +4,7 @@ const renderEditFormPage = (req, res)=>{
 
     let {id} = req.params;
     AccountModel.findOne({_id: id}).then((account)=>{
-        res.render("editFormPage", {account});
+        res.render("editFormPage", {account, user: req.session.user});
     })
     .catch((error)=>{
         console.log(error);

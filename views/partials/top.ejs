@@ -31,14 +31,20 @@
             </div>
             <div>
                 <% let term="" %>
-                <form action="/accounts/search?term=<%= term %>">
+                <form class="d-flex" action="/accounts/search?term=<%= term %>">
                     <input class="form-control" type="text"  name="term" value="<%= term %>">
                     <br>
                     <button type="submit" class=" btn btn-info me-2">Search</button>
-                </form>
-                
+                </form>              
             </div>
 
+            
+
+            <% if (user?.fullName) { %>
+                <a href="/auth/logout" class="btn btn-primary ms-1">Logout</a>
+                <button class=" btn bnt-success ms-1" ><%= user.fullName %></button>
+            <% } %>
+           
            
         </div>
 

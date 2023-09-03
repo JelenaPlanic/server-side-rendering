@@ -2,7 +2,8 @@ const AccountModel = require("../models/accountModel");
 
 const renderAccountsPage = (req, res)=>{  
    
-        res.render("accountsPage", {accounts : req.locals}) ; // acc ima vrednost obj locals
+        console.log(req.session);
+        res.render("accountsPage", {accounts : req.locals, user: req.session.user}) ; // acc ima vrednost obj locals
    
 }
 

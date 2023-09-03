@@ -11,7 +11,7 @@ const addAccount = async (req, res)=>{
         let saved = await newAccount.save(); // obracam se bazi (promise)
         console.log(saved);
 
-        res.redirect("/accounts");
+        res.redirect("/accounts", {user: req.session.user});
         
     } catch (error) {
         

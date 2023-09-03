@@ -1,6 +1,11 @@
 const {Router} = require("express");
 const getAllAcconts = require("../middlewares/getAllAccounts");
+const authVerify = require("../middlewares/authVerify");
 const router = Router();
+
+// posto zelim da bude middleware pozvan pri svakom requestu:
+router.use(authVerify);
+
 
 //GET
 router.get("/", getAllAcconts, require("../controllers/renderAccountsPage")); // dodat middleware
